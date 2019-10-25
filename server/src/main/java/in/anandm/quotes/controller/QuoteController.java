@@ -72,15 +72,17 @@ public class QuoteController {
 
 				outputStream.write("[".getBytes());
 				for (int i = 0; i < loopCount; i++) {
-
 					for (int j = 0; j < chunkSizeLocal; j++) {
+						if(nextId > 1) {
+							outputStream.write(",".getBytes());
+						}
 						byte[] quoteData = objectMapper
 								.writeValueAsBytes(new Quote(nextId++,
 										getAlphaNumericString(7),
 										getAlphaNumericString(8),
 										getAlphaNumericString(9)));
 						outputStream.write(quoteData);
-						outputStream.write(",".getBytes());
+						
 					}
 
 					outputStream.flush();
