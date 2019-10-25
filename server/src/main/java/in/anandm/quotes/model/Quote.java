@@ -9,38 +9,71 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement(name="quote")
 public class Quote {
 
-	@XmlElement(name="quote", type=String.class)
-	private String quote;
-	@XmlElement(name="author", type=String.class)
-	private String author;
+	// @XmlElement(name="quote", type=String.class)
+	// private String quote;
+	// @XmlElement(name="author", type=String.class)
+	// private String author;
 	
+
+	private int id;
+	private String name;
+	private String address;
+	private String comment;
+
 	public Quote() {
 		super();
 	}
 	
 
-	public Quote(String quote, String author) {
+	public Quote(int id, String name,String address,String comment) {
 		this();
-		this.quote = quote;
-		this.author = author;
+		this.id = id;
+		this.name = name;
+		this.address=address;
+		this.comment=comment;
 	}
 
 
-	public String getQuote() {
-		return quote;
+	public int getId() {
+		return id;
 	}
 
-	public void setQuote(String quote) {
-		this.quote = quote;
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public String getAuthor() {
-		return author;
+
+	public String getName() {
+		return name;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public String getComment() {
+		return comment;
+	}
+
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+
+	
 	
 }

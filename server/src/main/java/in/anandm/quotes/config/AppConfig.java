@@ -26,6 +26,6 @@ public class AppConfig {
 	@Bean
 	public QuoteService quoteService() {
 		return new HardCodedQuoteService(
-				new Quote("I think in terms of the day's resolutions, not the years", "Henry Moore"));
+				new Quote(1, "I think in terms of the day's resolutions, not the years", "Henry Moore", ""));
 	}
 }
